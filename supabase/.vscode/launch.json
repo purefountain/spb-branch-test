@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug parse-dependencies.js (Fixed File)",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/functions/parse-dependencies.js",
+      "args": ["afunc1/index.ts"],
+      "cwd": "${workspaceFolder}/functions"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug parse-dependencies.js (Prompt for File)",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/functions/parse-dependencies.js",
+      "args": ["${input:functionFile}"],
+      "cwd": "${workspaceFolder}/functions"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "functionFile",
+      "type": "promptString",
+      "description": "Enter the relative path to the function file (e.g., afunc1/index.ts)",
+      "default": "afunc1/index.ts"
+    }
+  ]
+}
